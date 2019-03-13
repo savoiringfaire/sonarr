@@ -10,7 +10,7 @@ class sonarr (
   Boolean $manage_gnupg = true,
   Boolean $manage_cacertificates = true,
 ){
-  if ($manage_gnugp) {
+  if ($manage_gnupg){
     package { 'gnupg': }
   }
 
