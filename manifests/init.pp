@@ -41,6 +41,10 @@ class sonarr (
     ]
   }
 
+  user { 'nzbdrone':
+    ensure => present
+  }
+
   file { '/lib/systemd/system/sonarr.service':
     ensure => file,
     content => template('sonarr/sonarr.service.erb')
