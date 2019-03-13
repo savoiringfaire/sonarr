@@ -43,11 +43,12 @@ class sonarr (
 
   file { '/lib/systemd/system/sonarr.service':
     ensure => file,
-    source => template('sonarr/sonarr.service.erb')
+    content => template('sonarr/sonarr.service.erb')
   }
 
   service { 'sonarr':
     ensure => running,
     enable => true,
+    require => File[/lib/systemd/system/sonarr.service]
   }
 }
