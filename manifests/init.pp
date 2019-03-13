@@ -49,6 +49,5 @@ class sonarr (
   service { 'sonarr':
     ensure => running,
     enable => true,
-    require => File[/lib/systemd/system/sonarr.service]
   }
 }
