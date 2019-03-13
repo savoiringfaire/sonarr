@@ -17,11 +17,11 @@ class sonarr (
   }
 
   apt::source { 'sonarr':
-    comment => 'Sonarr stable repository',
+    comment  => 'Sonarr stable repository',
     location => 'http://apt.sonarr.tv/',
-    release => 'master',
-    repos => 'main',
-    require => [
+    release  => 'master',
+    repos    => 'main',
+    require  => [
       Package[gnupg],
       Package[ca-certificates],
       Apt::Key[sonarr]
