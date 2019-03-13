@@ -40,4 +40,14 @@ class sonarr (
       Apt::Source[sonarr]
     ]
   }
+
+  file { '/lib/systemd/system/sonarr.service':
+    ensure => file,
+    source => template('sonarr/sonarr.service.erb')
+  }
+
+  service { 'sonarr':
+    ensure => running,
+    enable => true,
+  }
 }
