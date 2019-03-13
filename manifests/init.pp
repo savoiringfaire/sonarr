@@ -6,7 +6,7 @@
 #   include sonarr
 class sonarr (
   String $gpg_id = '0xA236C58F409091A18ACA53CBEBFF6B99D9B78493',
-  String $gpg_keyserver = 'keyserver.ubuntu.com:80',
+  String $gpg_keyserver = 'keyserver.ubuntu.com',
   Boolean $manage_gnupg = true,
   Boolean $manage_cacertificates = true,
 ){
