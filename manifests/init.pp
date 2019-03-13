@@ -45,6 +45,12 @@ class sonarr (
     ensure => present
   }
 
+  file { '/home/nzbdrone':
+    ensure => directory,
+    owner => 'nzbdrone',
+    group => 'nzbdrone'
+  }
+
   file { '/lib/systemd/system/sonarr.service':
     ensure => file,
     content => template('sonarr/sonarr.service.erb')
